@@ -5,8 +5,8 @@
 // @description  Toggles GCal event to/from All Day using Ctrl+Enter when event modal is present.
 // @author       rawbytz
 // @match        https://calendar.google.com/calendar/*
-// @updateUrl    https://gist.github.com/rawbytz/ac2f86a8a53533ffad66915b109573fb/raw/GCalToggleAllDay.user.js
-// @downloadUrl  https://gist.github.com/rawbytz/ac2f86a8a53533ffad66915b109573fb/raw/GCalToggleAllDay.user.js
+// @updateUrl    https://github.com/rawbytz/gcal-toggle-all-day/raw/master/GCalToggleAllDay.user.js
+// @downloadUrl  https://github.com/rawbytz/gcal-toggle-all-day/raw/master/GCalToggleAllDay.user.js
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
