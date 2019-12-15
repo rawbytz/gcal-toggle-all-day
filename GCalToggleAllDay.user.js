@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GCal Toggle All Day
 // @namespace    https://rawbytz.wordpress.com
-// @version      0.9
+// @version      1.0
 // @description  Toggles GCal event to/from All Day using Ctrl+Enter when event modal is present.
 // @author       rawbytz
 // @match        https://calendar.google.com/calendar/*
