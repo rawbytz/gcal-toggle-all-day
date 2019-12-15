@@ -14,7 +14,7 @@
 (function () {
   'use strict';
   function toglAllDay() {
-    const editButton = document.querySelectorAll(`div[data-tooltip="Edit event"]`)[0];
+    const editButton = document.querySelector(`div[data-tooltip="Edit event"]`);
     if (editButton) {
       editButton.click();
       setTimeout(function () {
