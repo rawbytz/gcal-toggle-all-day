@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GCal Toggle All Day
 // @namespace    https://rawbytz.wordpress.com
-// @version      1.0.2
+// @version      1.0.3
 // @description  Use Ctrl+Enter to toggle a GCal event to/from All Day when the event modal is present.
 // @author       rawbytz
 // @match        https://calendar.google.com/calendar/*
@@ -18,7 +18,7 @@
     if (editButton) {
       editButton.click();
       setTimeout(function () {
-        document.getElementById("c88").click();
+        document.querySelector('#xAlDaCbx > input[type="checkbox"]').click();
         document.getElementById("xSaveBu").click();
       }, 800);
     }
