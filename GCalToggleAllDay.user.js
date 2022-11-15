@@ -18,7 +18,7 @@
     if (editButton) {
       editButton.click();
       setTimeout(function () {
-        document.getElementById("xAlDaCbx").click();
+        document.getElementById("c88").click();
         document.getElementById("xSaveBu").click();
       }, 800);
     }
