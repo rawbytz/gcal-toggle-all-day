@@ -13,7 +13,7 @@
 
 (function () {
   'use strict';
-  // waits for checkbox, then toggles all-day and saves
+  // waits for all day checkbox, then toggles and saves
   function checkAllDayAndSave() {
     let interval = setInterval(function () {
       let allDayChk = document.querySelector('#xAlDaCbx > input[type="checkbox"]');
@@ -24,7 +24,7 @@
       }
     }, 50);
   }
-  
+
   function toglAllDay() {
     const editButton = document.querySelector(`button[aria-label="Edit event"]`);
     if (editButton) {
