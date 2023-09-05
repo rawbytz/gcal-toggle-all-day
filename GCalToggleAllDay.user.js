@@ -13,13 +13,17 @@
 
 (function () {
   'use strict';
+  function checkAllAndSave() {
+    document.querySelector('#xAlDaCbx > input[type="checkbox"]').click();
+    document.getElementById("xSaveBu").click();
+  }
+  
   function toglAllDay() {
     const editButton = document.querySelector(`button[aria-label="Edit event"]`);
     if (editButton) {
       editButton.click();
       setTimeout(function () {
-        document.querySelector('#xAlDaCbx > input[type="checkbox"]').click();
-        document.getElementById("xSaveBu").click();
+        checkAllAndSave();
       }, 800);
     }
   }
