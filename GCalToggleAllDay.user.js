@@ -13,13 +13,14 @@
 
 (function () {
   'use strict';
-  function checkAllAndSave() {
+  // waits for checkbox, then toggles all-day and saves
+  function checkAllDayAndSave() {
     let interval = setInterval(function () {
-      let saveButton = document.getElementById("xSaveBu");
-      if (saveButton) {
+      let allDayChk = document.querySelector('#xAlDaCbx > input[type="checkbox"]');
+      if (allDayChk) {
         clearInterval(interval); // turn off this timer
-        document.querySelector('#xAlDaCbx > input[type="checkbox"]').click();
-        saveButton.click(); 
+        allDayChk.click();
+        document.getElementById("xSaveBu").click();
       }
     }, 50);
   }
@@ -28,11 +29,33 @@
     const editButton = document.querySelector(`button[aria-label="Edit event"]`);
     if (editButton) {
       editButton.click();
-      checkAllAndSave();
+      checkAllDayAndSave();
     }
   }
+
+  function dupeAndToggle() {
+    const optionButton = document.querySelector(`button[aria-label="Options"]`);
+    if (optionButton) {
+      optionButton.click();
+      let dupeInt = setInterval(function () {
+        let duplicate = document.querySelector(`li[jsname="lbYRR"]`);
+        if (duplicate) {
+          clearInterval(dupeInt); // turn off this timer
+          duplicate.click();
+          checkAllDayAndSave();
+        }
+      }, 50);
+    }
+  }
+
+  // Ctrl+Enter toggles all day
   document.addEventListener("keydown", function (event) {
-    if (event.ctrlKey && !event.altKey && !event.shiftKey && !event.metaKey && event.key === "Enter") toglAllDay(); // Ctrl+Enter
+    if (event.ctrlKey && !event.altKey && !event.shiftKey && !event.metaKey && event.key === "Enter") toglAllDay();
+  });
+
+  // Ctrl+Shift+Enter duplicates and toggles all day
+  document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey && !event.altKey && event.shiftKey && !event.metaKey && event.key === "Enter") dupeAndToggle();
   });
 })();
 
