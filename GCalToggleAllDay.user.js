@@ -20,9 +20,9 @@
       if (allDayChk) {
         clearInterval(interval); // turn off this timer
         allDayChk.click();
-        setTimeout(() => { document.getElementById("xSaveBu").click(); }, 100);
+        document.getElementById("xSaveBu").click();
       }
-    }, 50);
+    }, 100);
   }
 
   function toglAllDay() {
