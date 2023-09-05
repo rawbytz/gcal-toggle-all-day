@@ -25,17 +25,6 @@
     }, 50);
   }
   
-  function saveEvent() {
-    let interval = setInterval(function () {
-      let saveButton = document.getElementById("xSaveBu");
-      if (saveButton) {
-        clearInterval(interval); // turn off this timer
-        saveButton.click();
-      }
-    }, 50);
-    
-  }
-
   function toglAllDay() {
     const editButton = document.querySelector(`button[aria-label="Edit event"]`);
     if (editButton) {
@@ -44,28 +33,8 @@
     }
   }
 
-  function duplicateEvent() {
-    const optionButton = document.querySelector(`button[aria-label="Options"]`);
-    if (optionButton) {
-      optionButton.click();
-      let interval = setInterval(function () {
-        let duplicate = document.querySelector(`li[jsname="lbYRR"]`);
-        if (duplicate) {
-          clearInterval(interval); // turn off this timer
-          duplicate.click();
-          saveEvent();
-        }
-      }, 50);
-    }
-  }
-
   // Ctrl+Enter toggles all day
   document.addEventListener("keydown", function (event) {
     if (event.ctrlKey && !event.altKey && !event.shiftKey && !event.metaKey && event.key === "Enter") toglAllDay();
-  });
-
-  // Ctrl+Shift+Enter duplicates and toggles all day
-  document.addEventListener("keydown", function (event) {
-    if (event.ctrlKey && !event.altKey && event.shiftKey && !event.metaKey && event.key === "Enter") duplicateEvent();
   });
 })();
