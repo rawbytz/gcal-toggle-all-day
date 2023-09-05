@@ -66,6 +66,6 @@
 
   // Ctrl+Shift+Enter duplicates and toggles all day
   document.addEventListener("keydown", function (event) {
-    if (event.ctrlKey && !event.altKey && event.shiftKey && !event.metaKey && event.key === "Enter") dupeAndToggle();
+    if (event.ctrlKey && !event.altKey && event.shiftKey && !event.metaKey && event.key === "Enter") duplicateEvent();
   });
 })();
