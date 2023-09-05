@@ -20,9 +20,9 @@
       if (allDayChk) {
         clearInterval(interval); // turn off this timer
         allDayChk.click();
-        document.getElementById("xSaveBu").click();
+        setTimeout(() => { document.getElementById("xSaveBu").click(); }, 100);
       }
-    }, 100);
+    }, 50);
   }
 
   function toglAllDay() {
@@ -44,7 +44,7 @@
           duplicate.click();
           checkAllDayAndSave();
         }
-      }, 100);
+      }, 50);
     }
   }
 
@@ -58,4 +58,3 @@
     if (event.ctrlKey && !event.altKey && event.shiftKey && !event.metaKey && event.key === "Enter") dupeAndToggle();
   });
 })();
-
