@@ -22,7 +22,18 @@
         allDayChk.click();
         document.getElementById("xSaveBu").click();
       }
-    }, 100);
+    }, 50);
+  }
+  
+  function saveEvent() {
+    let interval = setInterval(function () {
+      let saveButton = document.getElementById("xSaveBu");
+      if (saveButton) {
+        clearInterval(interval); // turn off this timer
+        saveButton.click();
+      }
+    }, 50);
+    
   }
 
   function toglAllDay() {
@@ -33,7 +44,7 @@
     }
   }
 
-  function dupeAndToggle() {
+  function duplicateEvent() {
     const optionButton = document.querySelector(`button[aria-label="Options"]`);
     if (optionButton) {
       optionButton.click();
@@ -42,7 +53,7 @@
         if (duplicate) {
           clearInterval(interval); // turn off this timer
           duplicate.click();
-          checkAllDayAndSave();
+          saveEvent();
         }
       }, 50);
     }
