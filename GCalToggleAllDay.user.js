@@ -14,20 +14,25 @@
 (function () {
   'use strict';
   function checkAllAndSave() {
-    document.querySelector('#xAlDaCbx > input[type="checkbox"]').click();
-    document.getElementById("xSaveBu").click();
+    let interval = setInterval(function () {
+      let saveButton = document.getElementById("xSaveBu");
+      if (saveButton) {
+        clearInterval(interval); // turn off this timer
+        document.querySelector('#xAlDaCbx > input[type="checkbox"]').click();
+        saveButton.click(); 
+      }
+    }, 50);
   }
-  
+
   function toglAllDay() {
     const editButton = document.querySelector(`button[aria-label="Edit event"]`);
     if (editButton) {
       editButton.click();
-      setTimeout(function () {
-        checkAllAndSave();
-      }, 800);
+      checkAllAndSave();
     }
   }
   document.addEventListener("keydown", function (event) {
     if (event.ctrlKey && !event.altKey && !event.shiftKey && !event.metaKey && event.key === "Enter") toglAllDay(); // Ctrl+Enter
   });
 })();
+
