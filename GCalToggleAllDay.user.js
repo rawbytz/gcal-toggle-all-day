@@ -1,15 +1,15 @@
 // ==UserScript==
 // @name         GCal Toggle All Day
 // @namespace    https://rawbytz.wordpress.com
-// @version      1.0.6
+// @version      1.0.7
 // @description  Use Ctrl+Enter to toggle a GCal event to/from All Day when the event modal is present.
 // @author       rawbytz
 // @match        https://calendar.google.com/calendar/*
-// @updateUrl    https://github.com/rawbytz/gcal-toggle-all-day/raw/master/GCalToggleAllDay.user.js
-// @downloadUrl  https://github.com/rawbytz/gcal-toggle-all-day/raw/master/GCalToggleAllDay.user.js
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
+
+// https://github.com/rawbytz/gcal-toggle-all-day/raw/master/GCalToggleAllDay.user.js
 
 (function () {
   'use strict';
