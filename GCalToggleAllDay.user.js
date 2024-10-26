@@ -33,6 +33,31 @@
     }
   }
 
+  function activateDuplicate() {
+    let interval = setInterval(function () {
+      let duplicate = document.querySelector(`li[jsname="lbYRR"]`);
+      if (duplicate) {
+        clearInterval(interval); // turn off this timer
+        duplicate.click();
+      }
+    }, 50);
+  }
+
+  function duplicateAndToggle() {
+    const optionsButton = document.querySelector(`button[aria-label="Options"]`);
+    if (optionsButton) {
+      optionsButton.click();
+      activateDuplicate();
+      checkAllDayAndSave();
+    }
+  }
+
+  // Ctrl+Shift+Enter duplicates and all days modal event 
+  document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey && !event.altKey && event.shiftKey && !event.metaKey && event.key === "Enter") duplicateAndToggle();
+  });
+
+
   // Ctrl+Enter toggles all day
   document.addEventListener("keydown", function (event) {
     if (event.ctrlKey && !event.altKey && !event.shiftKey && !event.metaKey && event.key === "Enter") toglAllDay();
